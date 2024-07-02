@@ -1,0 +1,19 @@
+<div class="bg-light p-3 container border rounded text-center m-5 mx-auto bg-white" style="width:fit-content">
+<div class=" p-4">
+
+<h1>You have chose the word : <%= @word %></h1>
+
+<% if @word_check == 1 %>
+<% puts @results["found"] %>
+  <% if @results["found"] === true %>
+    <p>Congratulations <%= @word %> is a valid choice.</p>
+  <% else %>
+    <p>Unfortunately <%= @word %> is not english...</p>
+  <%end%>
+ <% else%>
+  <p>Sorry but <%= @word %> can't be build out of <%= @letters%> </p>
+ <% end %>
+
+<%= link_to "Try again!", new_path%>
+</div>
+</div>

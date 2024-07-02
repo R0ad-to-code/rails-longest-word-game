@@ -1,0 +1,19 @@
+<div class="bg-light p-3 container border rounded text-center m-5 mx-auto bg-white" style="width:fit-content">
+<div class=" p-4">
+<h1>Find the longest word</h1>
+<div class="d-flex my-3 justify-content-center ">
+<% @letters.each do |letter|  %>
+<p class="m-2 border border-dark rounded bg-white p-2"><%= letter %></p>
+<% end %>
+</div>
+<div>
+  <form action="/score" method="post" data-turbo="false">
+    <input type="text" name="result" value="<% params[:result] %>"><br>
+    <input name="letters" type="hidden" value="<%= @all_letters %>" />
+    <label for="result">Type in a word with max <%= @length%> letters</label>
+    <input type="submit">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
+</div>
+</div>
